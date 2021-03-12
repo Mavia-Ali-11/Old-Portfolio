@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="shortcut icon" href="Fonts/tabIcon.png">
+    <link rel="stylesheet" href="style.css">
+    <title>Chat Application</title>
+</head>
+
+<body onload="diplayUsers()">
+    <div class="container-fluid shadow-lg main">
+        <div class="row">
+            <div class="col-md-4 pr-0 d-none d-md-block" id="friendList" onclick="notSignIn()">
+                <div class="card rounded-0" id="friendsCard">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class=" col-2 col-md-2">
+                                <img src="Fonts/user.png" width="45px" height="45px">
+                            </div>
+                            <div class="col-6 col-md-6" id="usernameHere"></div>
+                            <div class="col-4 col-md-4">
+                                <button id="signout" onclick="signout()" disabled>Signout</button>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item bg-light">
+                            <input class="form-control" id="searchInput" type="text" 
+                            placeholder="Search for a friend" style="border-radius: 15px;" disabled>
+                        </li>
+                        <li class="list-group-item list-group-item-action bg-success" id="chatRoom" style="cursor: pointer;">
+                            <div class="row">
+                                <div class="col-2 col-md-2">
+                                    <i class="fa fa-users" id="groupIconList" style="color: white;"></i>
+                                </div>
+                                <div class="col-10 col-md-10">
+                                    <div id="group" style="color: white;">Chat Room</div>
+                                    <div id="lastText" style="color: white;">Group chat with friends</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item list-group-item-action bg-primary">
+                            <div class="row">
+                                <div class="col-2 col-md-2">
+                                    <i class="fa fa-arrow-down" id="groupIcon" style="color: white;"></i>
+                                </div>
+                                <div class="col-10 col-md-10">
+                                    <div id="group" style="color: white;">All Friends</div>
+                                    <div id="describe" style="color: white;">Below are all users joined this chat till
+                                        now</div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="card-body pr-0 pl-0 pt-0" id="friendsBody" style="overflow: auto;">
+                        <ul class="list-group list-group-flush" id="users">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 pl-0" id="chatBox">
+                <div class="card h-100 rounded-0" id="chatPage" hidden>
+                    <div class="card-header" id="chatHeader">
+                        <div class="row">
+                            <div class="col-1 col-sm-1 col-md-2 col-lg-1 d-md-none" id="swapFriend">
+                                <i class="fas fa-list" onclick="friendsAgain()"></i>
+                            </div>
+                            <div class="col-2 col-sm-2 col-md-2 col-lg-1">
+                                <i class="fa fa-users" id="groupIcon" style="color:royalblue;"></i>
+                            </div>
+                            <div class="col-6 col-sm-5 col-md-6 col-lg-9">
+                                <div id="nameChatting">Chat Room</div>
+                                <div id="lastSeen">online</div>
+                            </div>
+                            <div class="col-1 col-sm-4 col-md-2 col-lg-1" id="icons">
+                                <i class="fas fa-paperclip"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body" id="messages">
+
+                    </div>
+                    <div class="card-footer">
+                        <div class="row" style="position: relative;">
+                            <div class="col-md-12" id="emoji" style="display: none;">
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#" role="tab"
+                                            aria-controls="home" aria-selected="true">Emojis</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="smiley" role="tabpanel"
+                                        aria-labelledby="home-tab">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2 col-md-1">
+                                <i class="far fa-grin fa-2x" id="emojis" onclick="emojiPanel()" style="margin-top: 2px; cursor: pointer;"></i>
+                            </div>
+                            <div class="col-8 col-md-10">
+                                <input type="text" class="form-control form-rounded" id="chatInput"
+                                    placeholder="Type a messsage..." oninput="checkInput()" autocomplete="off" spellcheck="false" onkeypress="onEnter(event)">
+                            </div>
+                            <div class="col-2 col-md-1">
+                                <i class="fas fa-paper-plane fa-2x" id="sendBtn" onclick="sendMessage()"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="startingPage">
+                    <h2 id="loginGuide">LogIn to Continue
+                        <span><i class="fas fa-comments" id="startIcon">...</i></span>
+                    </h2>
+                    <center>
+                        <input id="email" type="text" placeholder="Enter Gmail" autocomplete="off" autofocus="true"
+                            spellcheck="false"><br>
+                        <input id="password" type="password" placeholder="Password" autocomplete="off"
+                            spellcheck="false"><br>
+                        <input id="username" type="text" placeholder="Enter your name" autocomplete="off" spellcheck="false"
+                            maxlength="18"><br>
+                    </center>
+                    <span id="info">* fill only when signing up (max-18)</span>
+                    <button id="signin" onclick="signIn()">SignIn with G-mail</button>
+                    <center>
+                        <hr class="or"><span id="or">Or</span>
+                        <hr class="or">
+                    </center>
+                    <button id="signup" onclick="signUp()" style="margin-top: 10px;">SignUp with G-mail</button>
+                </div>
+                <div class="d-none d-md-block" id="letsChat" hidden>
+                    <h1 id="welcome">
+                        WELCOME
+                        <i class="fa fa-handshake" style="margin-left: 7px;"></i>
+                    </h1><br>
+                    <h2 id="chatMsg">Let's Chat with friends</h2>
+                    <hr style="width: 80%;">
+                    <h3 id="roomMsg">Join Chat Room</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-database.js"></script>
+
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyAJSJQW_nEEB6021yNM_Ed9_uhf0bt2dF8",
+            authDomain: "assignment-f6703.firebaseapp.com",
+            databaseURL: "https://assignment-f6703.firebaseio.com",
+            projectId: "assignment-f6703",
+            storageBucket: "assignment-f6703.appspot.com",
+            messagingSenderId: "212205341324",
+            appId: "1:212205341324:web:25283fd22b24510dc749a9",
+            measurementId: "G-8XW5D12V75"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="app.js"></script>
+</body>
+
+</html>

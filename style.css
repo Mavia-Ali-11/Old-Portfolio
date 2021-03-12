@@ -1,0 +1,299 @@
+@font-face {
+    font-family: OpenSans;
+    src: url('OpenSans-Regular.ttf');
+}
+
+html , body {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    background-color: whitesmoke;
+}
+
+#header {
+    top: 0px;
+    z-index: 1;
+    width: auto;
+    padding: 28px;
+    position: sticky;
+    background-color: #2196f3;
+    box-shadow: 0 0 15px #2196f3;
+}
+
+#heading {
+    margin: 0 auto;
+    color: white;
+    font-size: 30px;
+    transition: 0.5s;
+    font-weight: bold;
+    text-align: center;
+    word-spacing: 10px;
+    padding-left: 25px;
+    letter-spacing: 1px;
+    font-family: Franklin Gothic Medium;
+}
+
+#myself div, #footer div {
+    display: inline-block;
+}
+
+#profile {
+    width: 220px;
+    height: 225px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 200px;
+    display: inline-block;
+    margin: 30px 20px 0px 60px;
+    border: 7px ridge #2196f3;
+}
+
+#profile:hover {
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+#mydetails {
+    bottom: 45px;
+    position: relative;
+}
+
+#mydetails h1 {
+    font-size: 45px;
+    font-weight: bold;
+    color: steelblue;
+    margin-bottom: 0px;
+    font-family: OpenSans
+}
+
+#mydetails h2 {
+    font-size: 20px;
+    margin-top: 0px;
+    color: dodgerblue;
+    font-family: OpenSans;
+}
+
+#contact , #mailto {
+    font-size: 23px;
+    cursor: pointer;
+    color: royalblue;
+    text-decoration: none;
+    margin: 15px 12px 0px 0px;
+}
+
+#mail {
+    color: blue;
+    font-size: 14px;
+    font-family: Calibri;
+}
+
+#contact:hover, #mailto:hover, #mail:hover {
+    opacity: 0.9;
+}
+
+#none {
+    width: 90%;
+    border-color: gainsboro;
+}
+
+#assignments {
+    font-size: 35px;
+    margin-top: 80px;
+    color: #2196f3;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: Lucida Sans Regular;
+}
+
+hr {
+    width: 3%;
+    border: 1px solid #2196f3;
+}
+
+#buttons {
+    width: 85%;
+    margin: 0px auto;
+    margin-bottom: 100px;
+}
+
+.button {
+    width: 250px;
+    padding: 23px;
+    font-size: 20px;
+    transition: 0.5s;
+    overflow: hidden;
+    color: #1670f0;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    font-family: OpenSans;
+    display: inline-block;
+    margin: 10px 20px 10px 0px;
+    transform: translate(-0%,-0%);
+    box-shadow: 0 3px 3px #1670f0;
+}
+
+.button:hover {
+    color: white;
+    transition: 0.5s;
+    font-weight: bold;
+    margin-bottom: 3px;
+    background-color: #2196f3;
+    box-shadow: 0 0 5px #2196f3, 0 0 3px #2196f3;
+}
+
+#footer {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 25px 0px;
+    align-items: center;
+    background-color: #2196f3;
+    justify-content: space-around;
+}
+
+#course, #instruct, #copyright {
+    height: fit-content;
+    margin-bottom: 20px;
+}
+
+#course h4 , #instruct h4 {
+    color: white;
+    font-size: 18px;
+    line-height: 0px;
+    font-family: OpenSans;
+}
+
+#course a , #instruct a, #copyright a {
+    font-size: 15px;
+    line-height: 20px;
+    font-family: Arial;
+    color: lightgray;
+    text-decoration: none;
+}
+
+#footer a:hover {
+    color: darkslategray;
+}
+
+#myModal {
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: fixed;
+    background-color: rgba(0,0,0,0.9);
+}
+  
+.modal-content {
+    width: 550px;
+    height: 570px;
+    
+    display: block;
+    margin: 0 auto;
+    border-radius: 500px;
+}
+
+#caption  {
+    color: gold;
+    height: 150px;
+    display: block;
+    margin-top: 1pc;
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 38pc;
+    font-family: OpenSans;
+}
+  
+.modal-content, #caption {  
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+  
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+  
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+  
+.close {
+    top: 15px;
+    right: 35px;
+    color: white;
+    cursor: pointer;
+    font-size: 40px;
+    transition: 0.3s;
+    font-weight: bold;
+    position: absolute;
+}
+
+@media only screen and (max-width: 980px) {
+
+    #header {
+        padding: 55px;
+    }
+
+    #heading {
+        font-size: 48px;
+    }
+
+    .modal-content {
+        width: 90%;
+        height: 900px;
+    }
+
+    #caption  {
+        font-size: 70px;
+        margin-top: 60px;       
+        margin-left: 22pc;
+    }
+
+    .close {
+        font-size: 80px;
+    }
+
+    #profile {
+        width: 250px;
+        height: 255px;
+    }
+
+    #mydetails h1 {
+        font-size: 60px;
+        margin-top: 155px;
+    }
+
+    #mydetails h2 {
+        font-size: 27px;
+    }
+
+    #contact, #mailto {
+        font-size: 35px !important;
+    }
+
+    #mail {
+        font-size: 20px;
+    }
+
+    #assignments {
+        font-size: 55px;
+        margin-top: 130px;
+    }
+
+    hr {
+        width: 12%;
+    }
+
+    .button {
+        width: 68%;
+        padding: 25px;
+        font-size: 40px;
+        margin-top: 25px;
+    }
+}

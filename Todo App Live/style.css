@@ -1,0 +1,180 @@
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: lavender;
+}
+
+#listTodo {
+    width: 370px;
+    padding: 14px;
+    margin: 0 auto;
+    min-height: 570px;
+    background-color: white;
+    box-shadow: 0 0 5px gray;
+}
+
+h1 {
+    width: 90%;
+    padding: 15px;
+    color: white;
+    margin: 0 auto;
+    font-size: 32px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: navy;
+    text-transform: uppercase;
+    font-family: Franklin Gothic Medium;
+    text-shadow: 1px 1px 2px lightgray;
+}
+
+#today {
+    width: 85%;
+    height: 60px;
+    display: flex;
+    color: navy;
+    text-align: left;
+    margin-top: 15px;
+    padding-left: 40px;
+    align-items: center;
+    text-shadow: 1px 1px 2px lightgray;
+}
+
+#date , #two {
+    display: inline-block;
+}
+
+#date {
+    top: 3px;
+    font-size: 50px;
+    font-weight: bold;
+    position: relative;
+    font-family: Segoe UI;
+}
+
+#month {
+    top: 13px;
+    font-size: 15px;
+    font-weight: bold;
+    padding-left: 5px;
+    font-weight: bold;
+    position: relative;
+    font-family: Lucida Sans Regular;
+}
+
+#year {
+    padding-left: 5px;
+    font-family: sans-serif;
+}
+
+#day {
+    font-size: 17px;
+    font-weight: bold;
+    padding-top: 10px;
+    text-transform: uppercase;
+    font-family: Lucida Sans Regular;
+}
+
+#operation {
+    text-align: center;
+}
+
+#todo {
+    border: none;
+    width: 290px;
+    height: 30px;
+    font-size: 17px;
+    transition: 0.3s;
+    padding: 5px 0px;
+    margin-top: 35px;
+    border-bottom: 2px solid lightgray;
+}
+
+#todo:focus {
+    outline: none;
+    transition: 0.3s;
+    border-bottom: 2px solid dodgerblue;
+}
+
+#todo:focus::-webkit-input-placeholder {
+    top: -15px; 
+    font-size: .75em;
+    color: steelblue;
+    position: relative;
+    transition: 0.3s ease-out;
+}
+
+#btn1 , #btn2 {
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 25px 27px;
+    background-color: royalblue;
+    box-shadow: 1px 1px 3px gray;
+}
+
+#btn2 {
+    background-color: orangered;
+}
+
+#btn1:focus , #btn2:focus {
+    outline: none;
+}
+
+#btn1:hover , #btn2:hover {
+    opacity: 0.9;
+    transition: 0.3s;
+}
+
+#task {
+    width: 180px;
+    border: none;
+    font-size: 20px;
+    margin-bottom: 17px;
+    font-family: monospace;
+    border-bottom: 2px solid dodgerblue;
+}
+
+#task:disabled {
+    background-color: transparent;
+}
+
+#task:focus {
+    outline: none;
+}
+
+#editBtn, #dltBtn {
+    border: none;
+    float: right;
+    padding: 4px;
+    color: white;
+    font-size: 20px;
+    transition: 0.3s;
+    border-radius: 2px;
+    background-color: red;
+}
+
+#editBtn {
+    margin-right: 25px;
+    background-color: green;
+}
+
+#dltBtn {
+    margin-right: 30px;
+}
+
+#editBtn:hover , #dltBtn:hover  {
+    opacity: 0.9;
+}
+
+@media screen and (max-width: 1024px) {
+    body {
+        zoom: 180%;
+        padding-top: 70px;
+    }
+}
+
+@media screen and (max-width: 415px) {
+    body {
+        zoom: 85%;
+    }
+}

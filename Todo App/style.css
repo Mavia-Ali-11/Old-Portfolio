@@ -1,0 +1,135 @@
+body {
+    text-align: center;
+    background: linear-gradient(to left, rgb(245, 209, 142), burlywood);
+}
+
+.main {
+    width: 420px;
+    margin: 35px auto;
+    min-height: 582px;
+    position: relative;
+    padding-bottom: 5px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 0 8px gray;
+}    
+
+#img {
+    width: 100%;
+    opacity: 0.7;
+    height: 200px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.heading {
+    left: 3px;
+    top: 60px;
+    width: 100%;
+    color: white;
+    font-size: 22px;
+    position: absolute;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    text-shadow: 5px 5px 8px gray;
+    font-family: Franklin Gothic Medium;
+}
+
+#todo {
+    border: none;
+    width: 340px;
+    height: 30px;
+    font-size: 17px;
+    transition: 0.3s;
+    padding: 5px 0px;
+    margin-top: 20px;
+    border-bottom: 2px solid lightgray;
+}
+
+#todo:focus {
+    outline: none;
+    transition: 0.3s;
+    border-bottom: 2px solid steelblue;
+}
+
+#todo:focus::-webkit-input-placeholder {
+    top: -15px; 
+    font-size: .75em;
+    color: steelblue;
+    position: relative;
+    transition: 0.3s ease-out;
+}
+
+#btn1 , #btn2 {
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 20px 45px;
+    background-color: royalblue;
+    box-shadow: 1px 1px 3px gray;
+}
+
+#btn2 {
+    background-color: orangered;
+}
+
+#btn1:focus , #btn2:focus {
+    outline: none;
+}
+
+#btn1:hover , #btn2:hover {
+    opacity: 0.9;
+    transition: 0.3s;
+}
+
+#task {
+    width: 50%;
+    border: none;
+    font-size: 20px;
+    font-family: monospace;
+    margin: 0px 50px 14px 0px;
+    border-bottom: 2px solid steelblue;
+}
+
+#task:disabled {
+    background-color: transparent;
+}
+
+#task:focus {
+    outline: none;
+}
+
+#editBtn, #dltBtn {
+    border: none;
+    float: right;
+    padding: 5px;
+    color: white;
+    font-size: 18px;
+    border-radius: 2px;
+    background-color: orange;
+}
+
+#editBtn {
+    color: white;
+    margin-right: 25px;
+    background-color: slateblue;
+}
+
+#dltBtn {
+    margin-right: 55px;
+}
+
+@media only screen and (max-width: 1100px) {
+    body {
+        zoom: 210%;
+    }
+    .main {
+        margin-top: 95px;
+        min-height: 650px;
+    }
+    #btn1 , #btn2  {
+        font-size: 14px;
+    }
+}
+
+

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Form - Assignment # 8</title>
+</head>
+
+<body>
+    <div id="main">
+        <div id="header">
+            <div id="logo">
+                <a href="index.html" id="logo">Citizen's Public Secondary School</a><br>
+                <a href="#" id="link">www.cpss.pk</a>
+                <button id="btn0">+ connect</button>
+            </div>
+
+            <div id="links">
+                <button id="btn2">Contact</button>
+                <button id="btn2">Sign Up</button>
+                <button id="btn3">Log In</button>
+            </div>
+        </div>
+
+        <div id="heading">
+            <h1>Citizen's Public Secondary School - Admission Form</h1>
+            <p><i>Any incorrect information or empty fields will result in the cancellation</i></p>
+        </div>
+
+        <div id="form">
+            <form action="#">
+                <label for="name">- Student Name *</label>
+                <input type="text" id="name" placeholder="Enter student name" required>
+
+                <br><br>
+
+                <label for="fname">- Father name *</label>
+                <input type="text" id="fname" placeholder="Enter father name" required>
+
+                <br><br>
+
+                <label for="email">- Email <span>(optional)</span></label><br>
+                <input type="email" id="email" placeholder="Enter your email">
+
+                <br><br>
+                
+                <label for="number">- Home phone number *</label>
+                <input type="text" id="number" placeholder="Enter phone number" required>
+
+                <br><br>
+
+                <label for="age">- Date of birth *</label> <br>
+                <input type="date" id="age" required>
+
+                <br><br>
+
+                <label for="gender">- Gender *</label><br>
+                <select id="gender" required>
+                    <option disabled selected value>Select gender</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                </select>
+
+                <br><br>
+
+                <label for="class">- Admission for class *</label> <br>
+                <select id="class" required>
+                    <option disabled selected value>Select class</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                </select>
+
+                <br><br>
+
+                <label for="recommend">- How did you come to know about us?</label><br>
+                <input type="radio" name='recommend' id="recommend" style="margin-top: 15px;" /> <span>Social Media</span><br>
+                <input type="radio" name='recommend' id="recommend" /> <span>Friends or Relatives</span><br>
+                <input type="radio" name='recommend' id="recommend" /> <span>Teacher</span><br>
+                <input type="radio" name='recommend' id="recommend" /> <span>Website</span><br>
+                <input type="radio" name='recommend' id="recommend" /> <span>Other</span>
+
+                <br><br>
+
+                <label>- Why you left your previous school? <span>(if any)</span></label> <br>
+                <input type="checkbox" id="check" style="margin-top: 15px;"> <span>Low Quality Education</span> <br>
+                <input type="checkbox" id="check"> <span>Classroom Size</span> <br>
+                <input type="checkbox" id="check"> <span>Located In Bad Area</span> <br>
+                <input type="checkbox" id="check"> <span>Improper Arrangements</span> <br>
+                <input type="checkbox" id="check"> <span>Absence Of Teachers</span> <br>
+                <input type="checkbox" id="check"> <span>Irrevalent Courses</span> <br>
+                <input type="checkbox" id="check"> <span>Faculty Attitudes and Behaviors</span>
+
+                <br><br>
+
+                <label for="comments">- Your complete address</label> <br>
+                <textarea id="comments" rows="5" placeholder="Enter your address..." required></textarea><br><br>
+                <input type="submit" id="submitBtn">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

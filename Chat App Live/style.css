@@ -1,0 +1,381 @@
+body, html {
+    margin: 0px;
+    width: 100%;
+    padding: 0px;
+    height: 100%;
+    overflow: hidden;
+    background-color: white;
+}
+
+@font-face {
+    font-family: OpenSans;
+    src: url('Fonts/OpenSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: Merriweather;
+    src: url('Fonts/Merriweather-Bold.ttf');
+}
+
+.main {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: white;
+    border-top: 5px solid deepskyblue;
+    border-bottom: 5px solid deepskyblue;
+}
+
+#friendList {
+    opacity: 0.3;
+}
+
+#friendsCard {
+    height: 647px;
+}
+
+#usernameHere {
+    font-size: 17px;
+    margin-top: 10px;
+    color: #333333;
+    font-weight: bold;
+    font-family: OpenSans;
+}
+
+#messages {
+    overflow: auto;
+    max-height: 510px;
+}
+
+#profile {
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+}
+
+#friends , #userpic , #groupIcon , #groupIconList {
+    font-size: 45px;
+    color: gainsboro;
+    border-radius: 30px;
+    background-color: transparent;
+}
+
+#signout {
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 18px;
+    margin-top: 4px;
+    font-weight: bold;
+    padding: 5px 15px;
+    border-radius: 3px;
+    font-family: OpenSans;
+    background-color: tomato;
+}
+
+#signout:hover {
+    opacity: 0.9;
+}
+
+#name , #nameChatting , #group  {
+    font-size: 16px;
+    font-weight: bold;
+    font-family:  OpenSans;
+}
+
+#getEmail , #lastSeen ,#describe {
+    font-size: 13px;
+    line-height: 20px;
+}
+
+#lastText {
+    font-size: 13px;
+    line-height: 20px;
+    font-family: OpenSans;
+}
+
+#icons {
+    margin-top: 2px;
+    font-size: 25px;
+    cursor: pointer;
+    color: #9ca1ac;
+    margin-left: 55px;
+}
+
+#swapFriend {
+    cursor: pointer;
+    margin-top: 11px;
+    visibility: hidden;
+}
+
+#chatFriend {
+    font-size: 30px;
+    color: lavender;
+    background-color: white;
+}
+
+#senderName {
+    font-size: 11px;
+    color: dimgray;
+    font-weight:bold;
+    font-family: OpenSans;
+}
+
+#selfName {
+    font-size: 11px;
+    margin-top: 5px;
+    color: dimgray;
+    font-weight:bold;
+    margin-right: 5px;
+    font-family: OpenSans;
+}
+
+#recieve {
+    color: white;
+    font-size: 15px;
+    max-width: 100%;
+    padding: 10px 15px;
+    font-family: OpenSans;
+    display: inline-block;
+    background-color: dodgerblue;
+    border-radius: 0px 10px 10px 10px;
+}
+
+#sent {
+    color: black;
+    font-size: 15px;
+    max-width: 100%;
+    padding: 10px 15px;
+    font-family: OpenSans;
+    display: inline-block;
+    background-color: whitesmoke;
+    border-radius: 10px 0px 10px 10px;
+}
+
+#time , #sendTime {
+    font-size: 10px;
+    color: dimgray;
+    line-height: 0px;
+    margin-bottom: 20px;
+    font-family: Verdana;
+}
+
+#sendTime {
+    margin-left: 290px;
+}
+
+#startingPage {
+    margin: 65px auto;
+    width: fit-content;
+}
+
+#loginGuide {
+    text-align: left;
+    color: dimgray;
+    font-weight: bold;
+    font-family: OpenSans;
+}
+
+#startIcon {
+    font-size: 40px;
+    margin-left: 10px;
+    color: deepskyblue;
+}
+
+.error {
+    position: relative;
+    animation: shake .1s linear;
+    animation-iteration-count: 3;
+}
+
+@keyframes shake {
+    0% { left: -10px; }
+    100% { right: -10px; }
+}
+
+#email , #password ,#username {
+    width: 355px;
+    padding: 7px;
+    outline: none;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    border: 2px solid deepskyblue;
+}
+
+#signin , #signup {
+    padding: 7px;
+    width: 355px;
+    outline: none;
+    color: white;
+    display: block;
+    cursor: pointer;
+    font-size: 22px;
+    transition: 0.3s;
+    margin: 20px auto;
+    font-weight: bold;
+    font-family: OpenSans;
+    background-color: red;
+    border: 2px solid red;
+}
+
+#signin:active , #signup:active {
+    zoom: 98%;
+}
+
+#signin:hover , #signup:hover {
+    color: red;
+    border: 2px solid red;
+    background-color: white;
+}
+
+#info {
+    bottom: 5px;
+    color: black;
+    font-size: 13px;
+    margin-left: 6px;
+    font-weight: bold;
+    position: relative;
+    font-family: OpenSans;
+}
+
+.or , #or {
+    width: 30px;
+    display: inline-block;
+    border: 1px solid deepskyblue;
+}
+
+#or {
+    border: none;
+    bottom: 12px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-right: 10px;
+    position: relative;
+    font-family: OpenSans;
+}
+
+#letsChat {
+    width: fit-content;
+    text-align: center;
+    margin: 170px auto;
+}
+
+#welcome {
+    margin: 0 auto;
+    color: white;
+    font-size: 55px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-family: OpenSans;
+    background-color: dodgerblue;
+}
+
+#chatMsg {
+    font-size: 45px;
+    text-align: center;
+    color: deepskyblue;
+    font-family: MerriWeather;
+}
+
+#roomMsg {
+    font-size: 30px;
+    color: dimgray;
+    font-weight: bold;
+    text-align: center;
+    font-family: OpenSans;
+}
+  
+#emoji {
+    top: -40vh;
+    width: 59%;
+    position: absolute;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0px 0px 5px #ddd;
+}
+
+#emoji #myTabContent {
+    height: 30vh;
+    overflow: scroll;
+}
+
+#myTabContent a {
+    opacity: 0.8;
+    font-size: 23px;
+    text-decoration: none;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+  
+::-webkit-scrollbar-track {
+    background: white;
+}
+  
+::-webkit-scrollbar-thumb {
+    background: gainsboro;
+}
+
+@media screen and (max-width: 767px) {
+    #swapFriend {
+        visibility: visible;
+        margin-left: 3px;
+    }
+    #messages {
+        height: 497px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #startingPage {
+        zoom: 81%;
+        margin-left: 60px;
+        margin-top: 125px;
+    }
+    #nameChatting , #lastSeen {
+        margin-left: 7px;
+    }
+    #icons {
+        font-size: 23px;
+        margin-top: 3px;
+        margin-left: 27px;
+    } 
+    #groupIcon {
+        margin-top: 1px;
+        font-size: 40px;
+        margin-left: 3px;
+    }
+    #groupIconList {
+        margin-top: 3px;
+        font-size: 39px;
+    }
+    #signout {
+        margin-top: 5px;
+        font-size: 16px;
+        padding: 5px 10px;
+    }
+    #emojis {
+        margin-top: 1px;
+        margin-left: 8px;
+    }
+    #sendTime {
+        margin-left: 100px;
+    }
+    #emoji {
+        top: -35vh;
+        width: 100%;
+    }
+    #emoji #myTabContent {
+        height: 25vh;
+    }
+    #friendsCard {
+        height: 662px;
+    }
+    #messages {
+        min-height: 530px;
+    }
+}

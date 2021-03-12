@@ -1,0 +1,70 @@
+body {
+    background: linear-gradient(to left, pink ,plum);
+}
+
+#heading {
+    padding: 30px;
+    color: white;
+    font-size: 40px;
+    word-spacing: 10px;
+    text-align: center;
+    font-family: sans-serif;
+    background-color: rebeccapurple;
+}
+
+#timer {
+    width: 450px;
+    height: 600px;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 20px;
+    background-color: white;
+}
+
+#watch {
+    width: 350px;
+    color: white;
+    padding: 20px;
+    font-size: 60px;
+    margin: 90px auto;
+    text-align: center;
+    font-family: Arial;
+    border-radius: 10px;
+    background-color: darkviolet;
+}
+
+#control {
+    margin-right: 80px;
+}
+
+#control , #reset {
+    height: 60px;
+    width: 120px;
+    outline: none;
+    color: white;
+    font-size: 18px;
+    margin-top: 70px;
+    border-radius: 30px;
+    border: 1px solid #ff88fb;
+    box-shadow: 3px 3px 5px lightgray;
+    background: linear-gradient(45deg, #ff88fb,#ff00ec);
+}
+
+#reset:hover {
+    background: linear-gradient(45deg, #ff00ec, #ff88fb);
+}
+
+@media only screen and (max-width: 1100px) {
+    body {
+        zoom: 200%;
+    }
+    #timer {
+        margin-top: 150px;
+    }
+    #control , #reset {
+        height: 65px;
+        width: 130px;
+        font-size: 20px;
+    }
+}
+

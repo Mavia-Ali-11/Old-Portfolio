@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Assignments</title>
+    <link rel="icon" href="logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div id="header">
+        <h1 id="heading">WEB AND MOBILE HYBRID APPLICATION DEVELOPMENT</h1>
+    </div>
+
+    <div id="myself">
+        <div>
+            <img id="profile" src="profile.jpg" alt="Mavia Ali">
+            <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="img">
+                <div id="caption"></div>
+            </div>
+        </div>
+        <div id="mydetails">
+            <h1>Mavia Ali</h1>
+            <h2>- Web Developer</h2>
+            <h2>
+                <abbr title="facebook"><a class="fa fa-facebook" id="contact"
+                        href="https://facebook.com/maviaali.963" target="_blank"></a></abbr>
+
+                <abbr title="twitter"> <a class="fa fa-twitter" id="contact"
+                        href="https://twitter.com/maviaali597" target="_blank"></a></abbr>
+
+                <abbr title="linkedin"><a class="fa fa-linkedin" id="contact"
+                        href="https://pk.linkedin.com/in/mavia-ali-0117631b9" target="_blank"></a></abbr>
+
+                <abbr title="email"><a class="fa fa-envelope" id="contact"
+                        href="mailto:maviaali597@gmail.com" target="_blank"></a></abbr>
+
+                <abbr title="email"><a class="fa fa-whatsapp" id="contact"
+                    href="whatsapp://send?text=Hi Mavia!&phone=+923302723502"></a></abbr>
+
+                <abbr title="email"><a class="fa fa-phone" id="contact"
+                    href="tel:+923302723502"></a></abbr>
+            </h2>
+        </div>
+    </div>
+    <hr id="none">
+
+    <div>
+        <center>
+            <h1 id="assignments">My Projects<hr></h1>
+        </center>
+    </div>
+
+    <div id="buttons">
+        <center>
+            <a class="button" href="Form/index.html" target="_blank">Admission Form</a>
+            <a class="button" href="Iphone Home Page/index.html" target="_blank">Iphone - Home Page</a>
+            <a class="button" href="https://hyderabadiacharhouse.web.app/" target="_blank">Shop Website</a>
+            <a class="button" href="E Commerce Website/index.html" target="_blank">E Commerce Website</a>
+            <a class="button" href="Sayalni Home Page/index.html" target="_blank">Saylani - Home Page</a>
+            <a class="button" href="Calculator/index.html" target="_blank">Calculator</a>
+            <a class="button" href="Todo App/index.html" target="_blank">Todo App</a>
+            <a class="button" href="Todo App Live/index.html" target="_blank">Live Todo App</a>
+            <a class="button" href="Quiz App/index.html" target="_blank">Quiz App</a>
+            <a class="button" href="Chat App Live/index.html" target="_blank">Live Chat App</a>
+            <a class="button" href="Stop Watch/index.html" target="_blank">Stop Watch App</a>
+            <a class="button" href="Periodic Table/index.html" target="_blank">Periodic Table</a>
+        </center>
+    </div>
+
+    <br>
+
+    <div id="footer">
+        <div id="course">
+            <h4>Studied from</h4>
+            <a href="https://www.facebook.com/groups/WebMobileAppCourse" target="_blank">Saylani Mass IT
+                Training</a><br>
+            <a href="https://www.facebook.com/saylaniwelfare" target="_blank">Saylani Welfare International Trust</a>
+        </div>
+        <div id="instruct">
+            <h4>Instructors</h4>
+            <a href="">Muhammad Umair Khan</a><br>
+            <a href="https://Uwww.facebook.com/basitahmed786" target="_blank">Basit Ahmed</a><br>
+            <a href="">&nbsp;</a>
+        </div>
+        <div id="copyright">
+            <a href="index.html">Copyright &copy; 2020 Mavia Ali</a>
+        </div>
+    </div>
+
+
+    <script>
+        var modal = document.getElementById("myModal");
+        var img = document.getElementById("profile");
+        var modalImg = document.getElementById("img");
+        var captionText = document.getElementById("caption");
+        var span = document.getElementsByClassName("close")[0];
+
+        this.onload = function () {
+            modal.style.display = "none";
+            span.style.display = "none";
+        }
+
+        img.onclick = function () {
+            modalImg.src = this.src;
+            modal.style.display = "block";
+            span.style.display = "block";
+            captionText.innerHTML = this.alt;
+        }
+
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+    </script>
+
+
+</body>
+
+</html>
