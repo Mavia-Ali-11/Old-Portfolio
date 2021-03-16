@@ -16,7 +16,7 @@ function showDropDown(a, b) {
 
 }
 
-// Slider
+// Image Gallery
 
 var modal = document.getElementById("modal");
 var modalImg = document.getElementById("modalImg");
@@ -85,7 +85,7 @@ document.addEventListener('keydown', function (event) {
   }
 });
 
-// Got to top
+// Got to top and other animations on some scroll
 
 function topFunction() {
   document.body.scrollTop = 0;
@@ -93,10 +93,38 @@ function topFunction() {
 }
 
 var topBtn = document.getElementById("top");
+var intro = document.getElementById("intro");
 window.onscroll = function () {
-  if (document.documentElement.scrollTop > 600) {
+  if (document.documentElement.scrollTop > 1450) {
+    document.getElementById('icon1').style.opacity = '1';
+    document.getElementById('icon2').style.opacity = '1';
+    document.getElementById('icon3').style.opacity = '1';
+    document.getElementById('icon4').style.opacity = '1';
+    document.getElementById('icon5').style.opacity = '1';
+    document.getElementById('icon6').style.opacity = '1';
+  }
+  else if (document.documentElement.scrollTop > 800) {
+    const counters = document.querySelectorAll('.counters');
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerHTML;
+        const inc = target / target;
+        if (count < target) {
+          counter.innerHTML = count + inc;
+          setTimeout(updateCount, 100);
+        }
+        else {
+          count.innerHTML = target;
+        }
+      }
+      updateCount();
+    })
+  }
+  else if (document.documentElement.scrollTop > 300) {
+    intro.style.transform = 'translateX(0px)';
     topBtn.style.transform = "translateY(0px)";
-  } 
+  }
   else {
     topBtn.style.transform = "translateY(65px)";
   }

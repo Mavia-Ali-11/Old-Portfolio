@@ -134,7 +134,9 @@ body , html {
 .mobile_nav {
     top: 65px;
     z-index: 1;
+    overflow: auto;
     position: sticky;
+    max-height: 100vh;
 }
 
 .mobile_nav a {
@@ -187,17 +189,6 @@ marquee {
     background-color: #316dc3;
 }
 
-.intro {
-    max-width: 100%;
-    padding: 50px 0px;
-    background-color: ghostwhite;
-}
-
-.intro .row {
-    margin: auto;
-    max-width: 980px;
-}
-
 .heading h1 {
     font-size: 32px;
     font-weight: 900;
@@ -219,12 +210,25 @@ marquee {
     border: 1px solid #427900;
 }
 
-.intro p {
+.intro {
+    max-width: 100%;
+    padding: 50px 0px;
+    background-color: ghostwhite;
+}
+
+.intro .row {
+    margin: auto;
+    max-width: 980px;
+}
+
+#intro {
     color: gray;
     font-size: 14px;
     line-height: 25px;
     text-align: justify;
     margin-bottom: 50px;
+    transition: 0.6s ease-out;
+    transform: translateX(965px);
 }
 
 .stats {
@@ -299,6 +303,12 @@ marquee {
     font-weight: 900;
     color: #316dc3;
     font-family: Merriweather;
+}
+
+#icon1, #icon2, #icon3,
+ #icon4, #icon5, #icon6 {
+    opacity: 0;
+    transition: 1s;
 }
 
 .mission-row {
@@ -590,12 +600,6 @@ marquee {
     background-color: #555;
 }
 
-@media all and (min-width: 992px) {
-	.navbar .nav-item:hover .dropped { display: block; }
-    .dropped li:hover .inner-dropdown { display: block !important;}
-    .inner-dropdown li:hover .sub-dropdown { display: block !important;}
-}
-
 @media screen and (max-width: 1100px) {
     #main_nav a {
         zoom: 88%;
@@ -606,6 +610,15 @@ marquee {
     .mission-row {
         max-width: 92%;
     }
+    #intro {
+        transform: translateX(0px);
+    }
+}
+
+@media all and (min-width: 992px) {
+	.navbar .nav-item:hover .dropped { display: block; }
+    .dropped li:hover .inner-dropdown { display: block !important;}
+    .inner-dropdown li:hover .sub-dropdown { display: block !important;}
 }
 
 @media screen and (max-width: 991px) {

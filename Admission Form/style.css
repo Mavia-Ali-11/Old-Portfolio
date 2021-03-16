@@ -9,16 +9,16 @@ body {
 }
 
 #main {
-    background-color: rgba(1, 1, 1, 0.4);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 #header {
-    top: -5px;
+    top: 0px;
     z-index: 1;
     display: flex;
     max-width: 100%;
     position: sticky;
-    padding: 12px 30px;
+    padding: 10px 30px;
     font-family: Roboto;
     background-color: black;  
 }
@@ -30,7 +30,7 @@ body {
 #header #logo {
     min-width: 60%;
     color: white;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     text-decoration: none;
 }
@@ -62,7 +62,7 @@ body {
 
 #btn2, #btn3 {
     width: 85px;
-    height: 28px;
+    height: 25px;
     border: none;
     color: white;
     cursor: pointer;
@@ -75,7 +75,7 @@ body {
 
 #btn3 {
     color: white;
-    background-color: royalblue;
+    background-color: dodgerblue;
 }
 
 #btn1:hover, #btn2:hover, #btn3:hover {
@@ -87,7 +87,7 @@ body {
     min-width: 80%;
     padding: 10px 25px;
     margin-bottom: 30px;
-    background-color: royalblue;
+    background-color: dodgerblue;
 }
 
 #heading h1, #heading p {
@@ -119,8 +119,7 @@ body {
     padding:  50px;
     height: max-content;
     max-width: fit-content;
-    /* background-color: rgba(1, 1, 1, 0.5); */
-    background-image: radial-gradient(rgba(65, 105, 225, 0.5), rgba(1,1,1,0.5));
+    background-color: rgba(1, 1, 1, 0.6);
 }
 
 label {
@@ -186,7 +185,7 @@ label span {
     font-size: 16px;
     padding: 7px 35px;
     font-family: Roboto;
-    background-color: royalblue;
+    background-color: dodgerblue;
 }
 
 @media screen and (max-width: 465px) {
