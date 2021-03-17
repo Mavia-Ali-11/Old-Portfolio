@@ -95,7 +95,7 @@ function topFunction() {
 var topBtn = document.getElementById("top");
 var intro = document.getElementById("intro");
 window.onscroll = function () {
-  if (document.documentElement.scrollTop > 1450) {
+  if (document.documentElement.scrollTop > 1350) {
     document.getElementById('icon1').style.opacity = '1';
     document.getElementById('icon2').style.opacity = '1';
     document.getElementById('icon3').style.opacity = '1';
