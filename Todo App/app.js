@@ -17,7 +17,7 @@ function addTodo() {
         editBtn.setAttribute("id","editBtn");
         dltBtn.setAttribute("onclick","dltTask(this)");
         editBtn.setAttribute("onclick","editTask(this)");
-        dltBtn.setAttribute("class","fa fa-trash");
+        dltBtn.setAttribute("class","fa fa-minus");
         editBtn.setAttribute("class","fa fa-pencil");
         list.appendChild(dltBtn);
         list.appendChild(editBtn);
@@ -42,11 +42,12 @@ function pencil(y) {
     innerInp.focus();
     y.removeAttribute("class","fa fa-pencil");
     y.setAttribute("class","fa fa-check");
-    y.style.backgroundColor = "dodgerblue";
-    innerInp.style.borderBottom = "2px solid dodgerblue";
+    y.style.backgroundColor = "#25D366";
+    innerInp.style.borderBottom = "2px solid #25D366";
 }
 
 function check(y) {
+    console.log(y)
     var innerInp = y.previousSibling.previousSibling;
     if(innerInp.value == "") {
         alert("Can't be empty!\nPlease enter something");    
@@ -56,7 +57,7 @@ function check(y) {
         y.removeAttribute("class","fa fa-check");
         y.setAttribute("class","fa fa-pencil");
         y.style.backgroundColor = "slateblue";
-        innerInp.style.borderBottom = "2px solid steelblue";
+        innerInp.style.borderBottom = "2px solid lavender";
     }   
 }
 
@@ -69,3 +70,10 @@ function editTask(y) {
     }
 }
 
+
+var todo = document.getElementById('todo');
+todo.addEventListener('keydown', function (event) {
+    if(event.key == 'Enter') {
+        addTodo();
+    }
+});

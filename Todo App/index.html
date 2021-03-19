@@ -1,27 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Todo App</title>
-    <link rel="icon" href="Images/logo.png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="main">
-        <img id="img" src="Images/task.jpg">
-        <div class="heading">
-            <h1>Todo List</h1>
+        <div id="fixed">
+            <video autoplay muted loop>
+                <source src="assets/video.mp4" type="video/mp4">
+            </video>
+
+            <div class="heading">
+                <h1>Todo List</h1>
+            </div>
         </div>
-        <input type="text" id="todo" placeholder="Enter Todo" spellcheck="false"><br>
-        <button id="btn1" onclick="addTodo()">ADD TODO</button>
-        <button id="btn2" onclick="deleteAll()">DELETE ALL</button>
-        
-        <div>
-            <ul id="list">
+
+        <div id="operations">
+            <div id="input">
+                <input type="text" id="todo" placeholder="Enter Todo" spellcheck="false"><br>
+            </div>
+
+            <div id="buttons">
+                <i class="fa fa-plus" onclick="addTodo()"></i>
+                <i class="fa fa-trash" style="background-color: orangered; margin-left: 15px;" onclick="deleteAll()"></i>
+            </div>
+
+            <ul id="list" style="padding: 0px 10px;">
 
             </ul>
         </div>
     </div>
     <script src="app.js"></script>
 </body>
+
 </html>
