@@ -32,7 +32,7 @@ input {
     padding: 25px 17px;
     border-radius: 0px;
     font-family: inherit;
-    background: deepskyblue;
+    background-color: deepskyblue;
 }
 
 button {
@@ -76,7 +76,7 @@ input:focus, button:focus {
 }
 
 #card1, #card2 {
-    transition: transform 1s;
+    transition: transform 0.7s;
     transform: translateY(-140px);
 }
 
@@ -104,12 +104,13 @@ hr {
 }
 
 button:hover, .functions button:hover, .operators:hover, .others:hover {
-    color: white;
+    color: black;
     transition: 0.3s;
-    background-color: deepskyblue;
+    background-color: ghostwhite;
 }
 
 .equals:hover {
+    color: white;
     transition: 0.3s;
     transform: scale(1.02);
     background-color: dodgerblue;

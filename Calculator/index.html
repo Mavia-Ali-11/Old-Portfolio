@@ -38,16 +38,16 @@
                 <td><button>Log</button></td>
             </tr>
             <tr class="functions">
+                <td><button>e</button></td>
                 <td><button>ln</button></td>
-                <td><button>&excl;</button></td>
-                <td><button onclick="getInput('^')">^</button></td>
-                <td><button>x<sup>2</sup></button></td>
+                <td><button onclick="getInput('(')">(</button></td>
+                <td><button onclick="getInput(')')">)</button></td>
             </tr>
             <tr class="functions">
-                <td><button>e</button></td>
-                <td><button>(</button></td>
-                <td><button>)</button></td>
-                <td><button>&Sqrt;</button></td>
+                <td><button onclick="simpleFunc('sq')">x<sup>2</sup></button></td>
+                <td><button onclick="getInput('^')">^</button></td>
+                <td><button onclick="simpleFunc('sqrt')">&Sqrt;</button></td>
+                <td><button onclick="simpleFunc('!')">&excl;</button></td>
             </tr>
         </tbody>
         <tbody id="card1">
@@ -59,8 +59,8 @@
                 </td>
             </tr>
             <tr>
-                <td><button class="others"  onclick="getInput('C')">CE</button></td>
-                <td><button class="others"  onclick="getInput('C')">C</button></td>
+                <td><button class="others" onclick="getInput('C')">CE</button></td>
+                <td><button class="others" onclick="getInput('C')">C</button></td>
                 <td><button class="fas fa-backspace" onclick="getInput(null)"></i></button></td>
                 <td><button class="operators" onclick="getInput('%')"><i class="fas fa-percentage"</i></button></td>
             </tr>
@@ -92,7 +92,7 @@
         <tfoot id="card2">
             <tr>
                 <td colspan="7">
-                    <button class="equals" onclick="result()"><i class="fa fa-equals"></i></button>
+                    <button class="equals" onclick="getResult()"><i class="fa fa-equals"></i></button>
                 </td>
             </tr>
         </tfoot>
