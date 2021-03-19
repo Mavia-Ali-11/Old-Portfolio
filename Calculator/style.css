@@ -32,7 +32,7 @@ input {
     padding: 25px 17px;
     border-radius: 0px;
     font-family: inherit;
-    background-color: deepskyblue;
+    background: deepskyblue;
 }
 
 button {

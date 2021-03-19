@@ -128,4 +128,3 @@ document.addEventListener('keydown', function (event) {
         getInput(event.key);
     }
 });
-
