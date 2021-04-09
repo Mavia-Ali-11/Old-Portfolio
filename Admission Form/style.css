@@ -1,210 +1,190 @@
 body {
-    margin: 0px;
-    padding: 0px;
-    font-family: Roboto;
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-image: url('images/bg_img.jpeg');
+    margin: 0;
+    padding: 0;
+    font-family: Overpass;
+    box-sizing: border-box;
 }
 
-#main {
-    background-color: rgba(0, 0, 0, 0.2);
+:root {
+    --color-dark: #1d2231;
+    --main-color: #7bda1c;
+    --text-grey: slategray;
 }
 
-#header {
-    top: 0px;
-    z-index: 1;
-    display: flex;
-    max-width: 100%;
-    position: sticky;
-    padding: 10px 30px;
-    font-family: Roboto;
-    background-color: black;  
-}
-
-#header div {
-    display: inline-block;
-}
-
-#header #logo {
-    min-width: 60%;
-    color: white;
-    font-size: 16px;
-    font-weight: 600;
-    text-decoration: none;
-}
-
-#header #links {
-    min-width: 40%;
-    margin-top: 8px;
-    text-align: right;
-}
-
-#link {
-    font-size: 12px;
-    color: slategray;
-    font-family: Roboto;
-    text-decoration: none;
-}
-
-#btn0 {
-    height: 18px;
-    border: none;
-    color: white;
-    font-size: 12px;
-    cursor: pointer;
-    border-radius: 2px;
-    width: fit-content;
-    font-family: Roboto;
-    background-color: slategray;
-}
-
-#btn2, #btn3 {
-    width: 85px;
-    height: 25px;
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-size: 14px;
-    margin-bottom: 5px;
-    border-radius: 2px;
-    font-family: Roboto;
-    background-color: slategray;
-}
-
-#btn3 {
-    color: white;
-    background-color: dodgerblue;
-}
-
-#btn1:hover, #btn2:hover, #btn3:hover {
-    opacity: 0.9;
-}
-
-#heading {
-    margin: auto;
-    min-width: 80%;
-    padding: 10px 25px;
-    margin-bottom: 30px;
-    background-color: dodgerblue;
-}
-
-#heading h1, #heading p {
-    color: white;
-    font-size: 25px;
-    font-weight: 400;
-    line-height: 35px;
-    text-align: center;
-    margin-bottom: 40px;
-    font-family: Roboto;
-}
-
-#heading p {
+.main {
     width: 100%;
-    bottom: 30px;
-    margin: auto;
-    font-size: 14px;
-    text-shadow: none;
-    line-height: 20px;
-    position: relative;
-    color: lightgray;
-    font-weight: normal;
-    font-family: Roboto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background: linear-gradient(-25deg, var(--main-color) 50%, ghostwhite 50%);
 }
 
-#form {
+.main .row {
+    width: 100%;
     margin: auto;
-    min-width: 50%;
-    padding:  50px;
-    height: max-content;
-    max-width: fit-content;
-    background-color: rgba(1, 1, 1, 0.6);
+    display: flex;
+    min-height: 100vh;
+    max-width: 1300px;
+    padding: 0px 20px;
+    align-items: center;
+    justify-content: space-between;
 }
 
-label {
+.info {
+    z-index: 1;
+}
+
+#logo {
+    font-size: 55px;
+    margin-left: 5px;
+    letter-spacing: 3px;
+    color: var(--main-color);
+}
+
+.info h1 {
+    font-size: 55px;
+    margin-top: 35px;
+    font-weight: 900;
+    color: var(--color-dark);
+}
+
+.info h3 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: var(--text-grey);
+}
+
+.info div button {
     border: none;
+    width: 100px;
+    padding: 5px;
     color: white;
-    font-size: 17px;
-    font-weight: 400;
-    font-family: Roboto;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-right: 10px;
+    transition: 0.3s ease;
+    background-color: var(--main-color);
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
 }
 
-label span {
-    font-size: 15px;
-}
-
-#name, #fname, #email, #age,
-#class, #gender, #number {
-    border: none;
-    padding: 8px;
-    outline: none;
-    font-size: 15px;
-    min-width: 96%;
-    margin: 10px 0px;
-    border-radius: 3px;
-    font-family: Roboto;
-    border: 1px solid #ccc;
-}
-
-#class, #gender {
-    min-width: 99%;
-}
-
-#comments {
-    width: 94%;
-    padding: 12px;
-    font-size: 15px;
-    resize: vertical;
+.info div i {
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
     margin-top: 10px;
-    border-radius: 3px;
-    font-family: Roboto;
-    border: 1px solid #ccc;
+    margin-right: 10px;
+    border-radius: 100%;
+    transition: 0.3s ease;
+    background-color: var(--main-color);
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
 }
 
-#comments:focus {
-    outline: none;
+.info div button:hover {
+    color: var(--main-color);
+    background-color: ghostwhite;
 }
 
-#recommend, #check {
+.info div i:hover {
+    transition: 0.3s ease;
+    transform: translateY(-3px);
+}
+
+.form {
+    width: 50%;
+    overflow: auto;
+    max-height: 95vh;
+    backdrop-filter: blur(2px);
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.1);
+}
+
+.form::-webkit-scrollbar { width: 5px; }
+
+.form::-webkit-scrollbar-track { background: transparent; }
+
+.form::-webkit-scrollbar-thumb { background: rgb(255, 255, 255, 0.2); }
+
+::placeholder { font-size: 14px; }
+
+form {
+    width: 100%;
+    padding: 50px 30px;
+}
+
+label { font-weight: 600; }
+
+input[type=radio] { cursor: pointer; }
+
+.custom-radio { display: inline-block; }
+
+#extras {
+    margin-top: 2px;
+    font-weight: 400;
+    margin: 0px 10px;
+}
+
+input[type=checkbox] {
     width: 18px;
     height: 18px;
-    margin-bottom: 10px;
-}
-
-#recommend + span, #check + span {
-    color: white;
-    font-size: 16px;
-    font-family: Roboto;
-}
-
-#submitBtn {
-    border: none;
-    color: white;
     cursor: pointer;
-    font-size: 16px;
-    padding: 7px 35px;
-    font-family: Roboto;
-    background-color: dodgerblue;
+    border-radius: 3px !important;
 }
 
-@media screen and (max-width: 465px) {
-    #heading {
-        margin-bottom: 0px;
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.btn {
+    width: 220px;
+    overflow: hidden;
+    margin: 15px 0px;
+    border-radius: 0px;
+    transition: 0.3s ease;
+    color: ghostwhite !important;
+    background-color: transparent;
+    border: 1px solid ghostwhite;
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.1);
+}
+
+.alert {
+    color: red;
+    font-size: 14px;
+    padding: 5px 15px;
+    border-radius: 0px;
+}
+
+@media screen and (max-width: 1200px) {
+    .main .row {
+        padding: 0px 30px;
+        justify-content: center;
     }
-    #header #links {
-        margin-top: 0px;
+    .main .row > div {
+        margin: 50px 0px 20px 0px;
+    }
+    .form {
+        width: 100%;
+    }
+    .info h1 {
+        font-size: 52px;
     }
 }
 
-@media screen and (max-width: 242px) {
-    body {
-      zoom: 50%;
+@media screen and (max-width: 560px) {
+    .main .row {
+        padding: 0px 10px;
     }
-}
-
-@media screen and (max-width: 125px) {
-    body {
-      zoom: 20%;
+    #logo {
+        font-size: 45px;
+    }
+    .info h1 {
+        font-size: 35px;
+    }
+    .info h3 {
+        font-size: 25px;
+    }
+    .custom-radio {
+        width: 100% !important;
     }
 }
