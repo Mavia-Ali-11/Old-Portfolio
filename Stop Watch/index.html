@@ -1,25 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
-    <title>Stop Watch</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
+    <title>Stop Watch</title>
 </head>
 
 <body>
     <div class="main">
-        <div id="timer">
-            <h1 id="heading">STOP WATCH</h1>
-            <h1 id="watch">00:00:00:00</h1>
-            <center>
-                <div>
-                    <button id="control" onclick="startStop()" onmouseover="over()" onmouseout="out()">Start</button>
-                    <button id="reset" onclick="reset()">Reset</button>
-                </div>
-            </center>
+        <div class="card">
+            <svg width="250" height="250" style="position: absolute;">
+                <circle cx="125" cy="125" r="115" stroke="dodgerblue" style="opacity: 0.5;" stroke-width="7" fill="none"
+                    stroke-linecap='round' />
+                <circle id="timerCircle" cx="125" cy="125" r="115" stroke="dodgerblue" stroke-width="7" fill="none"
+                    stroke-linecap='round' />
+            </svg>
+
+            <div class="timer" id="timer">
+                <span id="hour">00 </span>:
+                <span id="minute">00 </span>:
+                <span id="second">00</span>:
+                <span id="milliSec">00</span>
+            </div>
+
+            <div class="controls">
+                <i class="fa fa-play" id="control" onclick="startStop()"></i>
+                <i class="fa fa-repeat" onclick="reset()"></i>
+                <i class="fa fa-scissors" id="cutter" style="padding: 10px;" onclick="lap()"
+                    onmouseover="checkCutter()"></i>
+            </div>
+
+            <div class="laps">
+                <h4>
+                    <span>Laps</span>
+                    <i class="fa fa-trash" onclick="deleteLaps()"></i>
+                </h4>
+                <ul id="laps"></ul>
+            </div>
         </div>
     </div>
+
+    <script src="app.js"></script>
 </body>
 
-<script src="app.js"></script>
 </html>

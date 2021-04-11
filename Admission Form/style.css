@@ -1,13 +1,13 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Overpass;
+    font-family: Roboto;
     box-sizing: border-box;
 }
 
 :root {
     --color-dark: #1d2231;
-    --main-color: #7bda1c;
+    --main-color: #72ca19;
     --text-grey: slategray;
 }
 
@@ -29,20 +29,22 @@ body {
     justify-content: space-between;
 }
 
-.info {
-    z-index: 1;
-}
-
 #logo {
     font-size: 55px;
     margin-left: 5px;
-    letter-spacing: 3px;
+    color: var(--main-color);
+}
+
+#cpss {
+    font-size: 55px;
+    font-weight: 900;
+    margin-left: 15px;
     color: var(--main-color);
 }
 
 .info h1 {
     font-size: 55px;
-    margin-top: 35px;
+    margin-top: 15px;
     font-weight: 900;
     color: var(--color-dark);
 }
@@ -94,7 +96,7 @@ body {
     width: 50%;
     overflow: auto;
     max-height: 95vh;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(7px);
     box-shadow: 5px 5px 30px rgba(0,0,0,0.1);
 }
 
@@ -160,31 +162,18 @@ input::-webkit-inner-spin-button {
         padding: 0px 30px;
         justify-content: center;
     }
-    .main .row > div {
-        margin: 50px 0px 20px 0px;
-    }
-    .form {
-        width: 100%;
-    }
-    .info h1 {
-        font-size: 52px;
-    }
+    .main .row > div { margin: 30px 0px; }
+    .form {  width: 100%; }
+    .info h1 { font-size: 52px; }
 }
 
 @media screen and (max-width: 560px) {
-    .main .row {
-        padding: 0px 10px;
+    .main .row { padding: 0px 10px; }
+    .info h1 { font-size: 35px; }
+    .info h3 { font-size: 25px; }
+    .info div button {
+        width: 92px;
+        margin-top: 15px;
     }
-    #logo {
-        font-size: 45px;
-    }
-    .info h1 {
-        font-size: 35px;
-    }
-    .info h3 {
-        font-size: 25px;
-    }
-    .custom-radio {
-        width: 100% !important;
-    }
+    .custom-radio { width: 100% !important; }
 }

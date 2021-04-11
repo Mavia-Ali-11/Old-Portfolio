@@ -1,70 +1,151 @@
 body {
-    background: linear-gradient(to left, pink ,plum);
+    margin: 0;
+    padding: 0;
+    font-family: Poppins;
+    box-sizing: border-box;
+    background-color: #161616;
 }
 
-#heading {
-    padding: 30px;
-    color: white;
-    font-size: 40px;
-    word-spacing: 10px;
-    text-align: center;
-    font-family: sans-serif;
-    background-color: rebeccapurple;
+.main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#timer {
-    width: 450px;
-    height: 600px;
-    margin: 0 auto;
-    position: relative;
-    border-radius: 20px;
-    background-color: white;
-}
-
-#watch {
-    width: 350px;
-    color: white;
-    padding: 20px;
-    font-size: 60px;
-    margin: 90px auto;
-    text-align: center;
-    font-family: Arial;
+.card {
+    height: 85vh;
+    display: flex;
+    overflow: hidden;
+    min-width: 360px;
+    padding: 20px 0px;
     border-radius: 10px;
-    background-color: darkviolet;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 10px 35px black;
+    background: linear-gradient(to bottom, #323338, #1e1f20);
 }
 
-#control {
-    margin-right: 80px;
+#timerCircle.addAnimation {
+    stroke-dasharray: 712;
+    stroke-dashoffset: -712;
+    animation-play-state: paused;
+    animation: animatedCircle 60s linear infinite;
 }
 
-#control , #reset {
-    height: 60px;
-    width: 120px;
-    outline: none;
+@keyframes animatedCircle {
+    from {
+        stroke-dashoffset: -10;
+    }
+}
+
+.timer {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    font-size: 27px;
+    color: ghostwhite;
+    align-items: center;
+    justify-content: center;
+}
+
+.timer span { 
+    width: 40px;
+    opacity: 0.5;
+    text-align: center;
+}
+
+#milliSec {
+    width: 30px;
+    font-size: 18px;
+    transform: translateY(2px);
+}
+
+.controls {
+    width: 55%;
+    display: flex;
+    margin-top: 15px;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.controls i {
+    border: none;
     color: white;
     font-size: 18px;
-    margin-top: 70px;
-    border-radius: 30px;
-    border: 1px solid #ff88fb;
-    box-shadow: 3px 3px 5px lightgray;
-    background: linear-gradient(45deg, #ff88fb,#ff00ec);
+    cursor: pointer;
+    padding: 10px 12px;
+    border-radius: 100%;
+    transition: 0.3s ease;
+    background-color: dodgerblue;
 }
 
-#reset:hover {
-    background: linear-gradient(45deg, #ff00ec, #ff88fb);
+.controls i:hover {
+    transition: 0.2s ease;
+    transform: scale(1.05);
 }
 
-@media only screen and (max-width: 1100px) {
-    body {
-        zoom: 200%;
-    }
-    #timer {
-        margin-top: 150px;
-    }
-    #control , #reset {
-        height: 65px;
-        width: 130px;
-        font-size: 20px;
-    }
+.controls button:focus {
+    outline: none;
 }
 
+.laps {
+    width: 75%;
+    margin: 0px;
+    height: 25px;
+    padding: 0px;
+    margin-top: 30px;
+}
+
+.laps h4 {
+    margin: 0px;
+    display: flex;
+    font-size: 16px;
+    font-weight: 400;
+    color: ghostwhite;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.laps h4 i {
+    font-size: 17px;
+    cursor: pointer;
+}
+
+#laps {
+    margin: 0px;
+    display: flex;
+    overflow: auto;
+    list-style: none;
+    line-height: 0px;
+    padding: 5px 0px;
+    max-height: 175px;
+    flex-direction: column-reverse;
+}
+
+#laps li { margin-top: -15px; }
+
+#laps h6 {
+    display: flex;
+    color: #ccc;
+    font-size: 13px;
+    font-weight: 400;
+    justify-content: space-between;
+}
+
+#laps::-webkit-scrollbar {
+    width: 0px;
+}
+ 
+#cutTime span {
+    width: 18px;
+    text-align: center;
+    display: inline-block;
+}
+
+@media screen and (max-width: 540px) {
+    .card {
+      min-width: 320px !important;
+    }
+}

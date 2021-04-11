@@ -8,98 +8,126 @@ var minutes = 0;
 var seconds = 0;
 var milliseconds = 0;
 
+var hourNow = document.getElementById("hour");
+var minNow = document.getElementById("minute");
+var secNow = document.getElementById("second");
+var milliNow = document.getElementById("milliSec");
+
 function stopWatch() {
+    milliNow.style.opacity = '1';
     msec++;
-    if(msec > 99) {
+
+    if (msec > 99) {
         msec = 0;
+        secNow.style.opacity = '1';
         sec++;
 
-        if(sec > 59) {
+        if (sec > 59) {
             sec = 0;
+            minNow.style.opacity = '1';
             min++;
         }
 
-        if(min > 59) {
+        if (min > 59) {
             min = 0;
+            hourNow.style.opacity = '1';
             hour++;
         }
     }
 
-    if(msec < 10) {
+    if (msec < 10) {
         milliseconds = "0" + msec.toString();
     }
     else {
         milliseconds = msec;
     }
 
-    if(sec < 10) {
+    if (sec < 10) {
         seconds = "0" + sec.toString();
     }
     else {
         seconds = sec;
     }
 
-    if(min < 10) {
+    if (min < 10) {
         minutes = "0" + min.toString();
     }
     else {
         minutes = min;
     }
 
-    if(hour < 10) {
+    if (hour < 10) {
         hours = "0" + hour.toString();
     }
     else {
         hours = hour;
     }
-    var watch = document.getElementById("watch");
-    watch.innerHTML = hours + ":" + minutes + ":" + seconds + ":" + milliseconds;
+    hourNow.innerHTML = hours;
+    minNow.innerHTML = minutes;
+    secNow.innerHTML = seconds;
+    milliNow.innerHTML = milliseconds;
 }
 
+
 var interval;
-var button = document.getElementById("control");
+var control = document.getElementById("control");
+var timerCircle = document.getElementById('timerCircle');
 
 function startStop() {
-    if(button.innerHTML === "Start") {
-        interval = setInterval(stopWatch,10);
-        button.innerHTML = "Stop";
-        button.style.border = '1px solid mediumseagreen';
-        button.style.background = 'linear-gradient(45deg, lightseagreen, mediumseagreen)';
+    if (control.getAttribute('class') === "fa fa-play") {
+        interval = setInterval(stopWatch, 10);
+        control.setAttribute('class', 'fa fa-pause');
+        timerCircle.classList.add('addAnimation');
+        timerCircle.style.animationPlayState = 'running';
     }
     else {
         clearInterval(interval);
-        button.innerHTML = "Start";
-        button.style.border = '1px solid #ff88fb';
-        button.style.background = 'linear-gradient(45deg, #ff88fb,#ff00ec)';
+        control.setAttribute('class', 'fa fa-play');
+        timerCircle.style.animationPlayState = 'paused';
     }
 }
 
-function out() {
-    if(button.innerHTML === "Start") {
-        button.style.background = 'linear-gradient(45deg, #ff88fb, #ff00ec)';
-    }
-    else {
-        button.style.background = 'linear-gradient(45deg, mediumseagreen, lightseagreen)';
-    }
-}
-
-function over() {
-    if(button.innerHTML === "Start") {
-        button.style.background = 'linear-gradient(45deg, #ff00ec, #ff88fb)';
-    }
-    else {
-        button.style.background = 'linear-gradient(45deg, lightseagreen, mediumseagreen)';
-    }
-}
+var counter = 0;
+var laps = document.getElementById('laps');
 
 function reset() {
     clearInterval(interval);
-    min = 0;
-    sec = 0;
-    msec = 0;
-    hour = 0;
-    document.getElementById("watch").innerHTML = "00:00:00:00";
-    document.getElementById("control").innerHTML = "Start";
-    button.style.border = '1px solid #ff88fb';
-    button.style.background = 'linear-gradient(45deg, #ff88fb,#ff00ec)';
+    min = 0; sec = 0; msec = 0; hour = 0;
+    timerCircle.removeAttribute('class');
+    control.setAttribute('class', 'fa fa-play');
+    deleteLaps();
+    var units = ['hour', 'minute', 'second', 'milliSec'];
+    for (var x = 0; x <= units.length; x++) {
+        document.getElementById(units[x]).innerHTML = '00';
+        document.getElementById(units[x]).style.opacity = '0.5';
+    }
+}
+
+function checkCutter() {
+    var cutter = document.getElementById('cutter');
+    if (control.getAttribute('class') === "fa fa-play") {
+        cutter.style.cursor = 'not-allowed';
+    }
+    else {
+        cutter.style.cursor = 'pointer';
+    }
+}
+
+function lap() {
+    if (control.getAttribute('class') == 'fa fa-pause') {
+        counter = counter + 1;
+        laps.innerHTML +=
+            `<li>
+                <h6>
+                    <span>${counter}</span>
+                    <span id="cutTime"><span>${hourNow.innerHTML}</span>:<span>${minNow.innerHTML}</span>:<span>${secNow.innerHTML}</span>:<span>${milliNow.innerHTML}</span></span>
+                </h6>
+            <li>`
+        laps.scrollTo(0, laps.clientHeight - laps.scrollHeight);
+    }
+}
+
+function deleteLaps() {
+    laps.innerHTML = "";
+    counter = 0;
 }
