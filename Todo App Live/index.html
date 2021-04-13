@@ -4,61 +4,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TodoApp with database</title>
-    <link rel="icon" href="../Assignment_10/Images/logo.png">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>RealTime TodoApp</title>
 </head>
 
 <body>
-    <div id="listTodo">
-        <h1>Todo List </h1>
-        <div id="today">
-            <p id="date"></p>
-            <div id="two">
-                <p id="month"></p>
-                <p id="year"></p>
+    <div class="main">
+        <div id="todoList">
+            <h1 id="heading">Todo List </h1>
+            <div id="today">
+                <div id="date">
+                    <div id="todayDate"></div>
+                    <div id="holder">
+                        <div id="todayMonth"></div>
+                        <div id="todayYear"></div>
+                    </div>
+                </div>
+                <div id="day"></div>
             </div>
-            <p id="day"></p>
-        </div>
 
-        <div id="operation">
-            <input type="text" id="todo" placeholder="Enter Todo" spellcheck="false"><br>
-            <button id="btn1" onclick="addTodo()">ADD TODO</button>
-            <button id="btn2" onclick="deleteAll()">DELETE ALL</button>
-        </div>
+            <div id="controls">
+                <div style="width: 100%;">
+                    <input type="text" id="todo" placeholder="Enter Todo" spellcheck="false">
+                    <label for="todo">Enter Todo</label>
+                </div>
+                <div id="operations">
+                    <button id="btn1" onclick="addTodo()">Add Task <i class="fa fa-plus" style="margin-left: 5px;"></i></button>
+                    <button id="btn2" onclick="deleteAll()">Delete All <i class="fa fa-trash" style="margin-left: 5px;"></i></button>
+                </div>
+            </div>
 
-        <div>
-            <ul id="list">
-
-            </ul>
+            <div id="allItems">
+                <h3>Todo Tasks</h3>
+                <ul id="taskList"></ul>
+            </div>
         </div>
     </div>
+
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-database.js"></script>
+
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyAJSJQW_nEEB6021yNM_Ed9_uhf0bt2dF8",
+            authDomain: "assignment-f6703.firebaseapp.com",
+            databaseURL: "https://assignment-f6703.firebaseio.com",
+            projectId: "assignment-f6703",
+            storageBucket: "assignment-f6703.appspot.com",
+            messagingSenderId: "212205341324",
+            appId: "1:212205341324:web:a53d2faff07c075dc749a9",
+            measurementId: "G-3EKM2C7DDB"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+
+    <script src="app.js"></script>
 </body>
-
-<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
-
-<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
-
-<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-database.js"></script>
-
-<script>
-
-    var firebaseConfig = {
-        apiKey: "AIzaSyAJSJQW_nEEB6021yNM_Ed9_uhf0bt2dF8",
-        authDomain: "assignment-f6703.firebaseapp.com",
-        databaseURL: "https://assignment-f6703.firebaseio.com",
-        projectId: "assignment-f6703",
-        storageBucket: "assignment-f6703.appspot.com",
-        messagingSenderId: "212205341324",
-        appId: "1:212205341324:web:a53d2faff07c075dc749a9",
-        measurementId: "G-3EKM2C7DDB"
-    };
-
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-</script>
-
-<script src="app.js"></script>
 
 </html>

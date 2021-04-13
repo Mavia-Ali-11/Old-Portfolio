@@ -1,118 +1,146 @@
 body {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    margin: 0px;
+    padding: 0px;
+    font-family: Poppins;
     background-color: lavender;
 }
 
-#listTodo {
-    width: 370px;
-    padding: 14px;
-    margin: 0 auto;
-    min-height: 570px;
-    background-color: white;
-    box-shadow: 0 0 5px gray;
+:root {
+    --main-color: slateblue;
 }
 
-h1 {
-    width: 90%;
-    padding: 15px;
-    color: white;
+.main {
+    display: flex;
+    min-height: 100vh;
+    padding: 0px 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+#todoList {
+    width: 370px;
     margin: 0 auto;
+    height: 580px;
+    background-color: white;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+#heading {
+    width: 100%;
+    margin: 0 auto;
+    color: white;
     font-size: 32px;
+    font-weight: 900;
+    padding: 15px 0px;
     text-align: center;
-    border-radius: 5px;
-    background-color: navy;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    font-family: Franklin Gothic Medium;
-    text-shadow: 1px 1px 2px lightgray;
+    background-color: var(--main-color);
 }
 
 #today {
-    width: 85%;
-    height: 60px;
+    width: 80%;
     display: flex;
-    color: navy;
-    text-align: left;
-    margin-top: 15px;
-    padding-left: 40px;
+    margin: 10px auto;
     align-items: center;
-    text-shadow: 1px 1px 2px lightgray;
-}
-
-#date , #two {
-    display: inline-block;
+    color: var(--main-color);
+    justify-content: space-between;
 }
 
 #date {
-    top: 3px;
-    font-size: 50px;
-    font-weight: bold;
-    position: relative;
-    font-family: Segoe UI;
+    display: flex;
+    align-items: center;
 }
 
-#month {
-    top: 13px;
-    font-size: 15px;
-    font-weight: bold;
-    padding-left: 5px;
-    font-weight: bold;
-    position: relative;
-    font-family: Lucida Sans Regular;
+#todayDate {
+    font-size: 45px;
+    font-weight: 700;
+    margin-right: 10px;
 }
 
-#year {
-    padding-left: 5px;
-    font-family: sans-serif;
+#holder {
+    display: flex;
+    font-size: 14px;
+    font-weight: 500;
+    flex-direction: column;
 }
 
 #day {
-    font-size: 17px;
-    font-weight: bold;
-    padding-top: 10px;
+    font-size: 16px;
+    font-weight: 700;
     text-transform: uppercase;
-    font-family: Lucida Sans Regular;
 }
 
-#operation {
-    text-align: center;
+#controls {
+    margin: auto;
+    display: flex;
+    margin-top: 15px;
+    max-width: 285px;
+    padding: 0px 10px;
+    align-items: center;
+    flex-direction: column;
 }
 
 #todo {
+    width: 100%;
     border: none;
-    width: 290px;
-    height: 30px;
-    font-size: 17px;
+    font-size: 15px;
     transition: 0.3s;
     padding: 5px 0px;
-    margin-top: 35px;
-    border-bottom: 2px solid lightgray;
+    font-family: Poppins;
+    border-bottom: 1px solid gainsboro;
 }
 
 #todo:focus {
     outline: none;
-    transition: 0.3s;
-    border-bottom: 2px solid dodgerblue;
+    transition: 0.3s ease;
+    border-bottom: 1px solid var(--main-color);
 }
 
 #todo:focus::-webkit-input-placeholder {
-    top: -15px; 
-    font-size: .75em;
-    color: steelblue;
+    visibility: hidden;
+}
+
+label {
+    bottom: 25px;
+    font-size: 12px;
+    visibility: hidden;
     position: relative;
-    transition: 0.3s ease-out;
+    transition: 0.3s ease;
+    transition-delay: -1s;
+    color: var(--main-color);
+}
+
+#todo:focus + label {
+    bottom: 47px;
+    visibility: visible;
+    transition: 0.3s ease;
+}
+
+#operations {
+    width: 100%;
+    display: flex;
+    margin-top: -10px;
+    justify-content: flex-start;
 }
 
 #btn1 , #btn2 {
+    width: 85px;
     border: none;
-    padding: 12px;
+    height: 25px;
     color: white;
-    margin: 25px 27px;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 4px 8px;
+    font-family: Poppins;
+    overflow: hidden;
+    transition: 0.3s ease;
     background-color: royalblue;
     box-shadow: 1px 1px 3px gray;
 }
 
 #btn2 {
+    margin-left: 15px;
     background-color: orangered;
 }
 
@@ -120,61 +148,80 @@ h1 {
     outline: none;
 }
 
-#btn1:hover , #btn2:hover {
-    opacity: 0.9;
-    transition: 0.3s;
+#btn1:hover, #btn2:hover {
+    width: 95px;
+}
+
+#allItems {
+    width: 300px;
+    line-height: 0px;
+    margin: 45px auto;
+    padding: 0px 10px;
+}
+
+#allItems h3 {
+    color: gray;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+#taskList {
+    margin: 0px;
+    padding: 0px;
+    overflow: auto;
+    max-height: 250px;
+    list-style-type: none;
+}
+
+#taskList::-webkit-scrollbar {
+    width: 0px;
+}
+
+#taskList li {
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #task {
-    width: 180px;
+    width: 210px;
     border: none;
-    font-size: 20px;
-    margin-bottom: 17px;
-    font-family: monospace;
-    border-bottom: 2px solid dodgerblue;
+    height: 28px;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: Poppins;
+    transition: 0.3s ease;
+    border-bottom: 2px solid lavender;
 }
 
 #task:disabled {
+    color: black;
     background-color: transparent;
 }
 
-#task:focus {
-    outline: none;
+#task:focus { outline: none; }
+
+#task.edit {
+    padding-left: 7px;
+    border-bottom: 2px solid var(--main-color);
 }
 
-#editBtn, #dltBtn {
+#editBtn, #deleteBtn {
     border: none;
-    float: right;
-    padding: 4px;
     color: white;
-    font-size: 20px;
-    transition: 0.3s;
-    border-radius: 2px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 5px;
+    padding: 5px 7px;
+    border-radius: 100%;
     background-color: red;
 }
 
 #editBtn {
-    margin-right: 25px;
-    background-color: green;
-}
-
-#dltBtn {
-    margin-right: 30px;
-}
-
-#editBtn:hover , #dltBtn:hover  {
-    opacity: 0.9;
-}
-
-@media screen and (max-width: 1024px) {
-    body {
-        zoom: 180%;
-        padding-top: 70px;
-    }
-}
-
-@media screen and (max-width: 415px) {
-    body {
-        zoom: 85%;
-    }
+    font-size: 15px;
+    padding: 6px 7px;
+    margin-right: 7px;
+    background-color: seagreen;
 }

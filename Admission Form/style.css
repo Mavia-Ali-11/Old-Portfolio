@@ -96,7 +96,7 @@ body {
     width: 50%;
     overflow: auto;
     max-height: 95vh;
-    backdrop-filter: blur(7px);
+    backdrop-filter: blur(2px);
     box-shadow: 5px 5px 30px rgba(0,0,0,0.1);
 }
 
@@ -163,7 +163,10 @@ input::-webkit-inner-spin-button {
         justify-content: center;
     }
     .main .row > div { margin: 30px 0px; }
-    .form {  width: 100%; }
+    .form, .info {  
+        width: 100%; 
+        max-height: fit-content;
+    }
     .info h1 { font-size: 52px; }
 }
 
